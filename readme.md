@@ -1,1 +1,1 @@
-Boilerplate React App
+Redux practice

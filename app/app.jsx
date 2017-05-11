@@ -11,7 +11,7 @@ $(document).foundation();
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
-<p>Boilerplate project</p>,
+<p>Learn Redux</p>,
   document.getElementById('app')
 );
 

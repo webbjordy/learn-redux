@@ -26,6 +26,6 @@ console.log('currentState', currentState);
 store.dispatch({
   type: 'CHANGE_NAME',
   name: 'Jordy'
-};);
+});
 
 console.log('Name should be Jordy', store.getState());

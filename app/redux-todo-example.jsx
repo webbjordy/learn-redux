@@ -22,7 +22,18 @@ var reducer = (state = stateDefault, action) => {
 
 };
 
-var store = redux.createStore(reducer);
+var store = redux.createStore(reducer, redux.compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+));
+
+// subscribe to changes
+
+store.subscribe(() => {
+  var state = store.getState();
+
+  document.getElementById('app').innerHTML = state.searchText;
+  console.log('Search text is', state.searchText);
+});
 
 var currentState = store.getState();
 console.log('currentState', currentState);

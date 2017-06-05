@@ -1,7 +1,8 @@
 var redux = require('redux');
+var thunk = require('redux-thunk').default;
 var {nameReducer, hobbiesReducer, moviesReducer, mapReducer} = require('./../reducers/index');
 
-export var configure () => {
+export var configure = () => {
   var reducer = redux.combineReducers({
     name: nameReducer,
     hobbies: hobbiesReducer,
@@ -10,6 +11,7 @@ export var configure () => {
   });
 
   var store = redux.createStore(reducer, redux.compose(
+    redux.applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   ));
 
